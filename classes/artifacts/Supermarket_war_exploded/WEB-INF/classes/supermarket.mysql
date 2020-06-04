@@ -1,0 +1,94 @@
+use supermarket;
+
+create table user(
+	uid varchar(20) primary key,
+	upassword varchar(20),
+	uname varchar(20),
+	urole int default 0
+);
+
+create table category(
+	cid int auto_increment primary key,
+	cname varchar(30)
+);
+
+create table unit(
+	uid int auto_increment primary key,
+	uname varchar(30)
+);
+
+create table provider(
+	pid int auto_increment primary key,
+	pname varchar(40),
+	pphone varchar(20),
+	paddress varchar(50),
+	plinkman varchar(20)
+);
+
+create table vip(
+	vid varchar(20) primary key,
+	vname varchar(20),
+	vphone varchar(20),
+	vsum float(12,2),
+	vscore int,
+	vcount int,
+	vrate float(12,2),
+	vbirthday date,
+	vbalance float(12,2)
+);
+
+create table save(
+	sid int auto_increment primary key,
+	vid varchar(20),
+	stime date,
+	smoney float(12,2),
+	uid varchar(20)
+);
+alter table save add constraint fk_vid foreign key(vid) references vip(vid);
+alter table save add constraint fk_user_uid foreign key(uid) references user(uid);
+
+create table product(
+	pid varchar(20) primary key,
+	cid int,
+	pname varchar(50),
+	pspec varchar(50),
+	uid int,
+	pminNumber int,
+	salePrice float(12,2),
+	vipPrice float(12,2),
+	pamount int
+);
+alter table product add constraint fk_cid foreign key(cid) references category(cid);
+alter table product add constraint fk_uid foreign key(uid) references unit(uid);
+
+create table stock(
+	sid varchar(20) primary key,
+	productId varchar(20),
+	providerId int,
+	stime datetime,
+	samount int,
+	sprice float(12,2)
+);
+alter table stock add constraint fk_product_pid foreign key(productId) references product(pid);
+alter table stock add constraint fk_provider_pid foreign key(providerId) references provider(pid);
+
+create table sale(
+	sid varchar(20) primary key,
+	vid varchar(20),
+	stime datetime,
+	stotal float(12,2),
+	scount int,
+	uid varchar(20)
+);
+alter table sale add constraint fk_sale_uid foreign key(uid) references user(uid);
+alter table sale add constraint fk_sale_vid foreign key(vid) references vip(vid);
+
+create table saleItem(
+	sid int auto_increment primary key,
+	saleId varchar(20),
+	pid varchar(20),
+	scount int,
+	sprice float(12,2)
+);
+alter table saleItem add constraint fk_saleItem_saleId foreign key(saleId) references sale(sid);
+alter table saleItem add constraint fk_saleItem_pid foreign key(pid) references product(pid);

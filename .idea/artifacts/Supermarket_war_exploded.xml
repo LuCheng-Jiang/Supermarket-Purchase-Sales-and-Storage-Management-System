@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Supermarket:war exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/Supermarket_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Supermarket" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="mysql-connector-java-5.1.7-bin.jar" module-name="Supermarket" />
+          <element id="library" level="module" name="jstl-1.2.jar" module-name="Supermarket" />
+          <element id="library" level="module" name="QRCode.jar" module-name="Supermarket" />
+          <element id="library" level="project" name="jstl-1.2" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Supermarket/web/Web" />
+    </root>
+  </artifact>
+</component>

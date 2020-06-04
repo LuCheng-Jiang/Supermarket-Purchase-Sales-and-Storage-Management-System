@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.wen.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>com.wen.servlet.CategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UnitServlet</servlet-name>
+    <servlet-class>com.wen.servlet.UnitServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProviderServlet</servlet-name>
+    <servlet-class>com.wen.servlet.ProviderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>VipServlet</servlet-name>
+    <servlet-class>com.wen.servlet.VipServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductServlet</servlet-name>
+    <servlet-class>com.wen.servlet.ProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SaveRecordServlet</servlet-name>
+    <servlet-class>com.wen.servlet.SaveRecordServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>StockServlet</servlet-name>
+    <servlet-class>com.wen.servlet.StockServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <servlet-class>com.wen.servlet.CheckoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RecordServlet</servlet-name>
+    <servlet-class>com.wen.servlet.RecordServlet</servlet-class>
+  </servlet>
+
+
+<filter>
+	<filter-name>encoding</filter-name>
+	<filter-class>com.wen.util.WebFilter</filter-class>
+	<init-param>
+		<param-name>charset</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>encoding</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/CategoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UnitServlet</servlet-name>
+    <url-pattern>/UnitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProviderServlet</servlet-name>
+    <url-pattern>/ProviderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VipServlet</servlet-name>
+    <url-pattern>/VipServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/ProductServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaveRecordServlet</servlet-name>
+    <url-pattern>/SaveRecordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StockServlet</servlet-name>
+    <url-pattern>/StockServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern>/CheckoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RecordServlet</servlet-name>
+    <url-pattern>/RecordServlet</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+</web-app>
